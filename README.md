@@ -1,15 +1,37 @@
-# belajar-vibe-coding
+# Belajar Vibe Coding
 
-To install dependencies:
+Proyek backend REST API yang dibangun menggunakan runtime **Bun**, framework **ElysiaJS**, **Drizzle ORM**, dan database **MySQL**.
 
+## Stack Teknologi
+- **Runtime:** [Bun](https://bun.sh/)
+- **Framework:** [ElysiaJS](https://elysiajs.com/)
+- **ORM:** [Drizzle ORM](https://orm.drizzle.team/)
+- **Database:** MySQL
+
+## Memulai Proyek
+
+### 1. Instalasi Dependensi
+Pastikan Anda sudah menginstal Bun di komputer Anda, lalu jalankan:
 ```bash
 bun install
 ```
 
-To run:
-
+### 2. Konfigurasi Environment
+Salin berkas `.env.example` menjadi `.env` dan sesuaikan kredensial database MySQL Anda:
 ```bash
-bun run index.ts
+cp .env.example .env
 ```
 
-This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+### 3. Migrasi Database
+Untuk membuat tabel di database MySQL berdasarkan skema Drizzle:
+```bash
+bun run db:generate
+bun run db:push
+```
+
+### 4. Menjalankan Server (Development)
+Untuk menjalankan server lokal dengan fitur auto-reload (watch mode):
+```bash
+bun run dev
+```
+Server akan berjalan di `http://localhost:3000`.
